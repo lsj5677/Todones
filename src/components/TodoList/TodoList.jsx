@@ -6,7 +6,6 @@ import styles from "./TodoList.module.css";
 export default function TodoList({ filter }) {
   const [todos, setTodos] = useState(readTodosFromLocalStorage);
   const handleAdd = (todo) => {
-    console.log("add", todo);
     setTodos([...todos, todo]);
   };
 
@@ -16,12 +15,10 @@ export default function TodoList({ filter }) {
 
   console.debug(`SUJIN:: ~ TodoList ~ todoList`, todos);
   const handleUpdate = (updated) => {
-    console.log("update", updated);
     setTodos(todos.map((todo) => (todo.id === updated.id ? updated : todo)));
   };
 
   const handleDelete = (deleted) => {
-    console.log("delete", deleted);
     if (window.confirm("Do you really want to delete?")) {
       setTodos(todos.filter((todo) => todo.id !== deleted.id));
     }

@@ -6,7 +6,6 @@ import styles from "./Header.module.css";
 
 export default function Header({ filters, filter, onFilterChange }) {
   const { darkMode, toggleDarkMode } = useDarkMode();
-  console.debug(`SUJIN:: ~ Header ~ darkMode`, darkMode);
 
   return (
     <header className={styles.header}>
