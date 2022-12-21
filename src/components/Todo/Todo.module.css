@@ -13,6 +13,12 @@
   height: 1.5rem;
 }
 
+.completed {
+  opacity: 0.6;
+  color: var(--color-gray);
+  text-decoration: line-through;
+}
+
 .text {
   flex: 1 1 0%;
   margin-left: 0.5rem;
@@ -27,16 +33,21 @@
   padding: 0.5rem;
   border-radius: 50%;
   cursor: pointer;
+  margin-left: 0.5rem;
 }
 
 .button > svg {
   color: var(--color-black);
 }
 
-.button:hover {
-  background-color: var(--color-red);
-}
-
 .button:hover > svg {
   color: var(--color-white);
+}
+
+.editButton:hover {
+  background-color: var(--color-blue);
+}
+
+.deleteButton:hover {
+  background-color: var(--color-red);
 }

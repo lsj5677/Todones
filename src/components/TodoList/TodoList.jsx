@@ -8,14 +8,14 @@ export default function TodoList({ filter }) {
   const handleAdd = (todo) => {
     setTodos([...todos, todo]);
   };
-
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
-  console.debug(`SUJIN:: ~ TodoList ~ todoList`, todos);
   const handleUpdate = (updated) => {
     setTodos(todos.map((todo) => (todo.id === updated.id ? updated : todo)));
+  };
+
+  const handleStateUpdate = (stateUpdated) => {
+    setTodos(
+      todos.map((todo) => (todo.id === stateUpdated.id ? stateUpdated : todo))
+    );
   };
 
   const handleDelete = (deleted) => {
@@ -23,6 +23,10 @@ export default function TodoList({ filter }) {
       setTodos(todos.filter((todo) => todo.id !== deleted.id));
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const filtered = getFilteredItems(todos, filter);
 
@@ -34,6 +38,7 @@ export default function TodoList({ filter }) {
             key={item.id}
             todo={item}
             onUpdate={handleUpdate}
+            onStateUpdate={handleStateUpdate}
             onDelete={handleDelete}
           />
         ))}
