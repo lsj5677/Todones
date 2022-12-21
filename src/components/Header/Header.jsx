@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { BsSun } from "react-icons/bs";
 import { MdDarkMode } from "react-icons/md";
 import { useDarkMode } from "../../context/DarkModeContext";
