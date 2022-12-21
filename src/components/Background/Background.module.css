@@ -1,0 +1,33 @@
+.background {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.wave {
+  position: relative;
+  width: 200%;
+  height: 100vh;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave > svg {
+  position: absolute;
+  bottom: 0;
+}
+
+.path {
+  fill: var(--color-blue);
+}
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

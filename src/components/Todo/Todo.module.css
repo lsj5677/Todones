@@ -1,0 +1,42 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.text {
+  flex: 1 1 0%;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.button > svg {
+  color: var(--color-black);
+}
+
+.button:hover {
+  background-color: var(--color-red);
+}
+
+.button:hover > svg {
+  color: var(--color-white);
+}
